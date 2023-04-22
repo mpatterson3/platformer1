@@ -35,9 +35,10 @@ def load_sprites():
     # Test if the images have been loaded successfully
     for img_name, img in images.items():
         print(f"{img_name} loaded successfully with size {img.get_size()}")
-    return images
 
-sprites = load_sprites()
+loaded_sprites = load_sprites
+for obj in loaded_sprites:
+    print (obj)
 def draw_tiles(data):
     row_count = 0
     for row in data:
@@ -46,7 +47,6 @@ def draw_tiles(data):
             screen.blit(sprites[tile],tile*tile_size)
             col_count +=1
         row_count+=1
-print (sprites)
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
